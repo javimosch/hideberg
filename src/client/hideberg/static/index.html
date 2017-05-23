@@ -13,6 +13,8 @@
     btn.on('click', function() {
         var email = $('.subcribe-form__email').val();
         if (!email) return alertify.warning('You forgot to write an email',5);
+        
+        window.ga('send', 'event', 'Subscription', 'click', 'Landing page');
         $.ajax({
             url: '/api/newsletter/add',
             type: 'POST',
@@ -32,10 +34,12 @@
 
                 alertify.success('Thanks for subscribing',10);
                 console.log('success', data);
+                window.ga('send', 'event', 'Subscription', 'success', 'Landing page');
             },
             error: function(err) {
                 alertify.error('Something was wrong, can you try later ?',10);
                 console.log('error', err);
+                window.ga('send', 'event', 'Subscription', 'failed', 'Landing page');
             }
         });
     });
