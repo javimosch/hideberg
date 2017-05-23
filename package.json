@@ -30,7 +30,7 @@
     "ssg"
   ],
   "engines": {
-    "npm": "7.8.0"
+    "npm": "4.6.1"
   },
   "author": "Javier Arancibia",
   "license": "ISC",
